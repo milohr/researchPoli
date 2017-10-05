@@ -1,0 +1,57 @@
+extends index.pug
+
+block content
+
+    if(news_list)
+        h4 
+            a(href="#news" data-toggle="collapse")= 'NOTICIAS RECIENTES'
+        div#news.collapse.in 
+            dl
+                each news in news_list
+                    hr
+                    dt= news.header
+                        
+    if(publication_list)
+        h4 
+            a(href="#publications" data-toggle="collapse")= 'PUBLICACIONES RECIENTES'
+        div#publications.collapse   
+            dl
+                each publication in publication_list
+                    hr
+                    dt
+                    a(href= publication.file)= publication.title.toUpperCase() 
+                        
+                        each user in publication.user_docs
+                            dd
+                                a.text-capitalize(href="/personas?userEmail="+user.email)= user.last_name+", "+user.name
+                        dd= publication.credits                   
+                    
+    if(project_list)
+        h4 
+            a(href="#projects" data-toggle="collapse")= 'PROYECTOS RECIENTES'
+        div#projects.collapse   
+            dl
+            each project in project_list
+                    hr
+                    dt
+                    a(href="#")= project.toUpperCase() 
+                    
+    if(investigation)
+        
+        h4= investigation.title
+        hr
+        h5= "OBJETIVOS"
+            br
+            br
+            small= investigation.description
+        
+        each item in investigation.items
+            hr
+            h5= item.title
+                br
+                br
+                small
+                    dl
+                        each line in item.subitems
+                            dt= line            
+        

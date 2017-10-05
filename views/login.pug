@@ -1,0 +1,11 @@
+extends index.pug
+
+block content
+    div.alignCenter
+        form(method="post", action="/login")  
+            div                        
+                input.form__input(type="email", name="email", placeholder="Email", required)   
+            div                         
+                input.form__input(type="password", name="password", placeholder="Password", required) 
+            div
+                input(type="submit", value= "Login")

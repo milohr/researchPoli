@@ -1,0 +1,74 @@
+extends index.pug
+
+block content
+
+    if(update_user)        
+        form(method="post", action="/dashboard/users/update")  
+            div                         
+                select.form__input(name="role")
+                    option(value="" selected disabled hidden)= " -- " + update_user.role +" -- "
+                    option(value="STUDENT") Estudiante
+                    option(value="TEACHER") Profesor
+                    option(value="COMMON") Invitado
+                    option(value="ADMIN") Admin 
+            div                        
+                input.form__input(type="email", name="email", placeholder="Email", value=update_user.email readonly) 
+            div                         
+                input.form__input(type="text", name="id", placeholder="ID", required, value=update_user.id)
+            div                         
+                input.form__input(type="text", name="name", placeholder="Name", required, value=update_user.name)
+            div                         
+                input.form__input(type="text", name="last_name", placeholder="Last name", required, value=update_user.last_name)
+            div                         
+                input.form__input(type="text", name="second_last_name", placeholder="Second last name", required, value=update_user.second_last_name) 
+            div                         
+            input.form__input(type="password", name="password", placeholder="New password")
+            div                         
+                input.form__input(type="password", name="password_check", placeholder="Repeat password")
+            div                         
+                input.form__input(type="url", name="photo", placeholder="Photo link", value=update_user.photo)    
+            div
+                textarea(name="description" cols="40" rows="5")= update_user.description  
+            div            
+                input.warning(type="submit", value= "Update")
+    else
+        div.user-actions
+                
+            form(method="post", action="/dashboard/users/actions") 
+                div                         
+                    select.form__input(name="action")
+                        option(value="UPDATE") Update
+                        option(value="REMOVE") Remove
+                div                        
+                    input.form__input(type="text", name="id", placeholder="ID or email", required)
+                div        
+                    input.regular(type="submit", value= "Run")
+                    
+                    
+            form(method="post", action="/dashboard/users/register")  
+                div                         
+                    select.form__input(name="role")
+                        option(value="STUDENT") Estudiante
+                        option(value="TEACHER") Profesor
+                        option(value="COMMON") Invitado
+                        option(value="ADMIN") Admin 
+                div                        
+                    input.form__input(type="email", name="email", placeholder="Email", required) 
+                div                         
+                    input.form__input(type="text", name="id", placeholder="ID", required)
+                div                         
+                    input.form__input(type="text", name="name", placeholder="Name", required)
+                div                         
+                    input.form__input(type="text", name="last_name", placeholder="Last name", required)
+                div                         
+                    input.form__input(type="text", name="second_last_name", placeholder="Second last name", required)
+                div                         
+                    input.form__input(type="password", name="password", placeholder="Password", required)
+                div                         
+                    input.form__input(type="password", name="password_check", placeholder="Repeat password", required)
+                div                         
+                    input.form__input(type="url", name="photo", placeholder="Photo link")  
+                div
+                    textarea(name="description" cols="40" rows="5")                 
+                div        
+                    input.regular(type="submit", value= "Register")

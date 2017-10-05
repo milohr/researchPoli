@@ -1,0 +1,31 @@
+extends index.pug
+block content
+
+    div.row
+        div.btn-group.btn-group-sm#menu.alignCenter(type="button" role="group")       
+            
+            a.btn.btn-default.btn-lg(href="/dashboard/publications")=   "Publicaciones"
+            if(user.role==="ADMIN")
+                a.btn.btn-default.btn-lg(href="/dashboard/users")=   "Personas"
+            if(user.role==="ADMIN" || user.role==="TEACHER" )
+                a.btn.btn-default.btn-lg(href="/dashboard/groups")=   "Grupos"        
+            a.btn.btn-default.btn-lg(href="/news")=   "Noticias"
+    div.row
+        div.col-lg-6.col-md-6.col-sm-12.col-xs-12
+            div.jumbotron
+                dl  
+                    dt.text-capitalize= user.name+" "+user.last_name+" "+user.second_last_name
+                    hr
+                    dd= "Email: " +user.email
+                    dd= "ID: "+user.id
+                    dd= "Role: "+user.role
+                    hr
+                    dd= "Singup Date: "+ moment(user.singupDate).format('MM/DD/YYYY')
+                    dd= "Last login: "+ moment(user.lastLogin).format('MM/DD/YYYY HH:mm')
+        div.col-lg-6.col-md-6.col-sm-12.col-xs-12
+            div.jumbotron
+                dd= user.description
+            
+                
+        div.col-lg-4.col-md-4.col-sm-12.col-xs-12
+            

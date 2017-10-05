@@ -1,0 +1,32 @@
+extends index.pug
+
+block content
+    
+    if(person)
+        img.profilePhoto(src=person.photo)
+        h6= person.photo
+        h4= person.name.toUpperCase() + " " +person.last_name.toUpperCase()
+            br
+            small
+                cite= person.email
+            hr
+            small= person.description
+        hr
+        if(publications)
+            dl
+                each publication in publications
+                    dt= publication.type.toUpperCase()+" / "+publication.date
+                        dd                    
+                            a(href= publication.file, target="_blank")= publication.title
+                    hr
+    
+    else if(people)
+        dl
+            each pp in people 
+                dt
+                    a(href="/personas?userEmail="+pp.email)=  pp.last_name+ ", "+ pp.name
+                    dd=  pp.role == "TEACHER" ? "Docente" : "Estudiante"
+                    
+                    dd= pp.email
+                    hr
+

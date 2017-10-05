@@ -1,0 +1,104 @@
+doctype html
+html(lang="es")
+    head
+        title= title? title : name
+        meta(name="X-UA-Compatible" content="IE=edge")
+        link(href="/css/bootstrap.min.css" rel="stylesheet")       
+        link(href="/style.css" rel="stylesheet")       
+    
+    if(color) 
+        - var col=color
+    else
+        - var col="#333"
+    
+    body(style="background-color:"+col+";")                  
+        div.container 
+        
+            div.row
+                div.col-lg-12.col-md-12.col-sm-12.col-xs-12                       
+                        div.page-header
+                            div.row
+                                div.col-lg-2.col-md-2.col-sm-2.col-xs-2 
+                                    a(href=("/"))
+                                        img.logo(src="/img/logoB.png")
+                                    
+                                div.col-lg-10.col-md-10.col-sm-10.col-xs-10.text-right
+                                    div.btn-group.btn-group-sm(type="button" role="group")
+                                        if(user)                                
+                                            a.btn.btn-default.btn-sm(href="/dashboard")= user.name
+                                            a.btn.btn-danger.btn-sm(href="/logout")= "Logout"
+                                        else
+                                            a.btn.btn-default.btn-sm(href="/login")= "Login"
+            
+            div.row        
+                div.col-lg-2.col-md-2.col-sm-12.col-xs-12                                  
+                    div(style=("border-left: 5px solid black;")).jumbotron.alignCenter.mainMenu    
+                        div.btn-group-vertical.btn-group-sm#menu(type="button" role="group")
+                            a.btn.btn-default.btn-lg(href="/investigacion")=   "Investigación"
+                        
+                            a.btn.btn-default.btn-lg(href="/personas")=   "Personas " 
+                            
+                            a.btn.btn-default.btn-lg(href="/grupos")=   "Grupos"
+                        
+                            a.btn.btn-default.btn-lg(href="/publicaciones")=   "Publicaciones"
+                        
+                            a.btn.btn-default.btn-lg(href="#contact")=  "Contacto"                          
+                
+                div.col-lg-10.col-md-10.col-sm-12.col-xs-12     
+                    div(style=("border-bottom: 5px solid black;")).jumbotron
+                        div.row
+                            div.jumbotron
+                                block content
+                        div.row.row-20
+                            if(error)
+                                div.alert.alert-warning
+                                    strong.text-center= error
+                            if(message)
+                                div.alert.alert-success
+                                    strong.text-center= message                
+            br
+            br
+            div.row.row-50.news.alignCenter
+                div(style=("border-right: 5px solid black;")).jumbotron               
+                    div.col-lg-6.col-md-6.col-sm-6.col-xs-6
+                        a.btn.btn-default.btn-lg(href="#")=   "Unirse"
+                    div.col-lg-6.col-md-6.col-sm-6.col-xs-6
+                        a.btn.btn-default.btn-lg(href="#")=   "Enterate"
+            br
+            div.row.row-50.news2.alignCenter#contact
+                div.col-lg-6.col-md-6.col-sm-12.col-xs-12
+                    div(style=("border-left: 5px solid black;")).jumbotron
+                        h5= "CONTACTO"
+                            br
+                            small= "Sandra Patricia Mateus Santiago.\nDirección: Cra 48 N° 7-151, Of: P19-146.\nE-mail: grinsoft@elpoli.edu.co , spmateus@elpoli.edu.co\nWeb: http://grinsoft.elpoli.edu.co"
+            br
+            br
+            div.row.row-50.alignCenter
+                h4
+                    small(style=("color:white;"))= "Diseñado y escrito por Camilo Higuita - 2017"
+                
+        script(src="/js/jquery.js")
+        script(src="/js/script.js")
+        script(src="/js/bootstrap.min.js")
+        script.
+            $(window).resize(function() {
+            if ($(window).width() <= 1000) {
+                $('#menu').removeClass('btn-group-vertical');
+                $('#menu').addClass('btn-group');
+            } 
+            else {
+                $('#menu').addClass('btn-group-vertical');
+                $('#menu').removeClass('btn-group');
+            }
+            });
+        script.
+            $(window).load(function() {
+            if ($(window).width() <= 1000) {
+                $('#menu').removeClass('btn-group-vertical');
+                $('#menu').addClass('btn-group');
+            } 
+            else {
+                $('#menu').addClass('btn-group-vertical');
+                $('#menu').removeClass('btn-group');
+            }
+            });

@@ -1,0 +1,356 @@
+@font-face {
+    font-family: "aileron-bold"; 
+    src: url('/fonts/aileron/Aileron-Bold.otf'); /*URL to font*/
+}
+
+@font-face {
+    font-family: "aileron-heavy"; 
+    src: url('/fonts/aileron/Aileron-Heavy.otf'); /*URL to font*/
+}
+
+@font-face {
+    font-family: "aileron-light"; 
+    src: url('/fonts/aileron/Aileron-Light.otf'); /*URL to font*/
+}
+
+@font-face {
+    font-family: "aileron-regular"; 
+    src: url('/fonts/aileron/Aileron-Regular.otf'); /*URL to font*/
+}
+
+@font-face {
+    font-family: "aileron-semibold"; 
+    src: url('/fonts/aileron/Aileron-SemiBold.otf'); /*URL to font*/
+}
+
+* 
+{
+    border-radius: 0 !important;
+}
+
+body
+{
+    font-family: courier;
+    font-size: 12px;
+    background-image: url("/img/pattern.png");
+    background-repeat: repeat repeat;
+   /* background-image: url("http://www.politecnicojic.edu.co/images/img/poli-desde-el-cielo.jpg");
+    background-position: center center;
+    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;*/
+}
+
+.page-header
+{
+    border:none;
+    background-color:transparent;
+    max-height:100px;
+  
+   /* -webkit-box-shadow: 10px 10px 0px 3px rgba(255,255,255,1);
+-moz-box-shadow: 10px 10px 0px 3px rgba(255,255,255,1);
+box-shadow: 10px 10px 0px 3px rgba(255,255,255,1);*/
+/*    background-color: #333;
+    margin:0;
+    height:140px;*/
+}
+
+.page-header .title
+{
+    padding:10px;
+    font-weight:bold;
+    font-family: aileron-heavy;
+    font-size: 40px;
+    text-align:left;
+}
+a
+{
+    color: black;
+    
+}
+
+a:hover:
+{
+    color:blue;
+}
+
+h1,h2,h3,h4,h5,h6
+{
+    font-family: aileron-bold;
+}
+
+dt,dl,dd,small
+{
+    font-family:courier;
+    font-weight:normal;
+}
+
+.row-20
+{
+    margin-top:20px;
+}
+
+.row-50
+{
+    margin-top:50px;
+}
+
+.col-50
+{
+    margin-left:50px;
+}
+
+.news
+{
+    max-height:500px;
+    min-height:400px;
+    background-image: url("http://www.politecnicojic.edu.co/images/fotos/2017/apit-presente-en-la-8-rueda-de-talento-ti.jpg");
+    background-position: center center;
+    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+   /* -webkit-filter: contrast(3);
+    filter: contrast(3);*/
+}
+.news2
+{
+    max-height:500px;
+    min-height:400px;
+    background-image: url("http://www.politecnicojic.edu.co/images/img/poli-desde-el-cielo.jpg");
+    background-position: center center;
+    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+   /* -webkit-filter: contrast(3);
+    filter: contrast(3);*/
+}
+
+
+.alignCenter
+{   
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin:auto;
+}
+
+.jumbotron
+{
+    background-color:white;
+    border:none;
+    border-radius:0;
+}
+
+img.logo
+{
+    height:100px;
+    width:auto;
+}
+
+.btn
+{
+    border:none;
+    text-align:left;
+    font-weight:bold;
+}
+
+.btn:hover
+{
+    border-bottom:2px solid black;
+    background-color: inherit;
+    color: auto;
+}
+
+
+.jumbotron .mainMenu
+{
+    border-top:5px solid black;
+}
+p .small
+{
+    font-size: 10px;
+    color:pink;
+}
+
+.contentAlt
+{
+    margin:auto;
+    max-width: 40%;
+    max-height:40%;
+    background-color:white;
+}
+
+.mainMenu
+{
+    font-family: courier;
+}
+/*FORMS*/
+
+form{
+      border: 1px solid #333;
+      height:auto;
+      min-width:160px;
+      max-width:605px;
+}
+
+select
+{
+    width:100%;
+}
+
+
+
+input, select,textarea {
+    width:100%;
+    background-image: none;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 5px;
+    -webkit-transition: background-color 0.3s;
+            transition: background-color 0.3s;
+}
+
+textarea
+{
+    width:100%;
+    max-width:600px;
+    max-height:160px;
+    min-width:160px;
+    min-height:100px;
+}
+
+input[type='submit'] {
+  cursor: pointer;
+  width:100%;
+  border-top:1px solid #333;
+}
+
+.regular
+{
+     color: #fff;
+    background-color: #333;
+}
+
+.error
+{
+     color: #D8000C;
+    background-color: #FFBABA;
+}
+
+ .warning
+{
+  color: #9F6000;
+    background-color: #FEEFB3;
+}
+ .sucess
+{
+ color: #4F8A10;
+    background-color: #DFF2BF;
+}
+
+ .info
+{
+ color: #00529B;
+    background-color: #BDE5F8;
+}
+.options
+{
+    margin:auto;
+    padding:20px;
+    display:inline-block;
+    border: 1px solid #333;
+    
+}
+
+.options .submenu a
+{
+    margin:20px;
+}
+
+/*.profiles .card .user .image
+{
+    height:100px;
+    width:auto;
+    border:1px solid #333;
+    border-radius: 100%;
+}*/
+
+.profilePhoto
+{
+    
+    height:100px;
+    width:auto;
+    border:1px solid #333;
+    border-radius: 5%;
+}
+
+
+.user-actions
+{
+    
+    width:100%;
+    height:100%;
+    display:inline-flex;
+   
+}
+
+
+.user-actions form
+{
+    margin:auto;
+}
+
+.peoplePanel
+{
+    width:100%;
+     
+  
+}
+
+ .profiles
+{
+    width:100%;
+    display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-auto-rows: 150px;
+  grid-auto-flow: row dense;
+
+}
+
+.card
+{
+ 
+  width:100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  grid-column-start: auto;
+  grid-row-start: auto;
+}
+
+.card .user
+{
+    width:100%;
+    display:inline-block;
+    text-align:center;
+}
+
+.user  a
+{
+    font-size:12px;
+    text-align:center;
+   margin:10px;
+   
+   
+}
+
+
